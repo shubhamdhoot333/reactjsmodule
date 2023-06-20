@@ -1,4 +1,5 @@
 import { PersonCircle } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 function Login() {
     const initial={
@@ -34,10 +35,11 @@ function Login() {
 
   return (
     <>     
-    <div className="container">
+    <div className="container mt-5">
     
     <PersonCircle size={100} className="mt-4"/>
-    <form className="mt-4" onSubmit={handleSubmit}>             
+    <h4 className='mt-2'>Login Form</h4>
+    <form className="mt-2" onSubmit={handleSubmit}>             
                { inputfield.map((inputfields, index) => {
                     return (
                             <div key={index} > 
@@ -63,6 +65,11 @@ function Login() {
             <div className="col-lg-4"></div>
         </div>
     </form>
+    <div className='row mt-2'>
+            <div className="col-lg-4"></div>
+            <div className="col-lg-4"> <Link to ="/register">Click here to Registration </Link></div>
+            <div className="col-lg-4"></div>
+    </div>
     </div>
   
 
