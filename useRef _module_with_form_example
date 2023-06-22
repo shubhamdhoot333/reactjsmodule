@@ -1,0 +1,27 @@
+import "./styles.css";
+import { useRef } from "react";
+
+export default function App() {
+  const name = useRef();
+  const password = useRef();
+  const submited = (e) => {
+    e.preventDefault();
+    console.log(name);
+    const uname = name.current.value;
+    const upassword = password.current.value;
+    alert(`${uname},${upassword}`);
+  };
+  return (
+    <div className="App">
+      <form onSubmit={submited}>
+        <input type="text" ref={name} />
+        <input type="text" ref={password} />
+        <input type="submit" />
+      </form>
+    </div>
+  );
+}
+
+
+/* “useRef” React Hook can be used to create Uncontrolled Elements. These elements can be accessed using the DOM Reference.
+While creating an Uncontrolled Element, we use the keyword “ref”, which points out to a reference object, storing the DOM reference of the elements rendered in the component */
