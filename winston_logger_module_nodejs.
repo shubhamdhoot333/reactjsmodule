@@ -1,0 +1,18 @@
+// 1 import the winston logger library
+import winston from "winston";
+
+// 2 create a logger object with the desired setting
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+          new winston.transports.File({ filename: 'log/error.log', level: 'error' }),
+          new winston.transports.File({ filename: 'log/combined.log' }),
+  ],
+});
+
+// 3 logger in info message 
+   logger.info("hello user ");
+
+// 4 logger in info message 
+   logger.error("plz filled the fields properly ",{ error:new Error("Something went wrong")});
